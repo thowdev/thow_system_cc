@@ -1,0 +1,25 @@
+python -m venv .virt_env_python
+
+pip install ansible
+
+$ which ansible
+/Volumes/gitWorkspace/private/.virt_env_python/bin/ansible
+
+$ ansible-galaxy collection init thowdev.thow_system_cc --init-path tmp
+- Collection thowdev.thow_system_cc was created successfully
+
+$ git clone git@github.com:thowdev/thow_system_cc.git
+Cloning into 'thow_system_cc'...
+
+mv tmp/thowdev/thow_system_cc/* thow_system_cc/
+
+# Adapt README.md
+
+# Commit and push changes
+$ git log -1 --oneline
+00ff459 (HEAD -> main, origin/main, origin/HEAD) Init new ansible collection thowdev.thow_system_cc
+
+cd thow_system_cc/roles/
+
+$ ansible-galaxy init ar-git
+- Role ar-git was created successfully
